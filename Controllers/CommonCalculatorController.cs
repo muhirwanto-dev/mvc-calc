@@ -18,7 +18,7 @@ namespace Calculator.Controllers
             return View(_commonCalculator.CalculatorModel);
         }
 
-        [HttpPost]
+        [HttpGet]
         public IActionResult ClearExpression()
         {
             _commonCalculator.CalculatorModel.Expression = string.Empty;
@@ -26,6 +26,7 @@ namespace Calculator.Controllers
             return View("Index", _commonCalculator.CalculatorModel);
         }
 
+        [HttpGet]
         public IActionResult AssignExpression(string value)
         {
             if (value != "." || !_commonCalculator.CalculatorModel.Expression.Contains(value))
@@ -36,6 +37,7 @@ namespace Calculator.Controllers
             return View("Index", _commonCalculator.CalculatorModel);
         }
 
+        [HttpGet]
         public IActionResult DoCalculation()
         {
             _commonCalculator.CalculatorModel.Expression = new DataTable().Compute(_commonCalculator.CalculatorModel.Expression, null).ToString() ?? string.Empty;
