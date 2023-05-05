@@ -26,7 +26,6 @@ namespace Calculator.Controllers
             return View("Index", _commonCalculator.CalculatorModel);
         }
 
-        [HttpGet]
         public IActionResult AssignExpression(string value)
         {
             if (value != "." || !_commonCalculator.CalculatorModel.Expression.Contains(value))
