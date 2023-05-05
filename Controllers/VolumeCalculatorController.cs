@@ -4,11 +4,11 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Calculator.Controllers
 {
-    public class AreaCalculatorController : Controller
+    public class VolumeCalculatorController : Controller
     {
-        private readonly IAreaCalculator _calculator;
+        private readonly IVolumeCalculator _calculator;
 
-        public AreaCalculatorController(IAreaCalculator calculator)
+        public VolumeCalculatorController(IVolumeCalculator calculator)
         {
             _calculator = calculator;
         }
@@ -27,10 +27,11 @@ namespace Calculator.Controllers
         }
 
         [HttpGet]
-        public IActionResult DoCalculation(AreaCalculatorModel model)
+        public IActionResult DoCalculation(VolumeCalculatorModel model)
         {
             _calculator.Model.Height = model.Height;
             _calculator.Model.Width = model.Width;
+            _calculator.Model.Wide = model.Wide;
             _calculator.DoCalculation();
 
             return View("Index", _calculator.Model);

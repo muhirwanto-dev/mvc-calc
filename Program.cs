@@ -6,6 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 builder.Services.AddSingleton<ICommonCalculator, CommonCalculator>();
 builder.Services.AddSingleton<IAreaCalculator, AreaCalculator>();
+builder.Services.AddSingleton<IVolumeCalculator, VolumeCalculator>();
 
 var app = builder.Build();
 
