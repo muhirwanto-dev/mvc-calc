@@ -7,6 +7,7 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddSingleton<ICommonCalculator, CommonCalculator>();
 builder.Services.AddSingleton<IAreaCalculator, AreaCalculator>();
 builder.Services.AddSingleton<IVolumeCalculator, VolumeCalculator>();
+builder.Services.AddSingleton<ICelsius2FahrenheitConverter, Celsius2FahrenheitConverter>();
 
 var app = builder.Build();
 

@@ -1,0 +1,37 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model Celsius2FahrenheitModel
+<form asp-controller="Celsius2Fahrenheit" asp-action="DoCalculation" method="get">
+    <body>
+        <h1 class='text-center text-primary'>Celsius 2 Fahrenheit Converter</h1>
+        <div class='container'>
+            <div class='row'>
+                <form class='form-group-lg form-inline' onsubmit='return false'>
+                    <div class="row">
+                        <label asp-for="@Model.Input" class="col-lg-2"></label>
+                        <input type="number" asp-for="@Model.Input" class="col-lg-2" />
+                    </div>
+                    <div class="row">
+                        <label asp-for="@Model.Output" class="col-lg-2"></label>
+                        <label asp-for="@Model.Output" class="col-lg-2">@Model.Output</label>
+                    </div>
+                    <div class="row">
+                        <label asp-for="Mode" class="col-lg-2"></label>
+                        <select asp-for="Mode" class="col-lg-2" asp-items="Html.GetEnumSelectList<Calculator.Services.ConverterMode>()">
+                            <option selected="selected" value="">Select</option>
+                        </select>
+                    </div>
+                    <button onclick="location.href='@Url.Action("ClearExpression", "Celsius2Fahrenheit")'"
+                            class='btn btn-warning btn-lg' type='button' style="margin-top: 10px">
+                        Clear
+                    </button>
+                    <button type='submit' class='btn btn-primary btn-lg' style="margin-top: 10px">Calculate</button>
+                </form>
+            </div>
+        </div>
+    </body>
+</form>
