@@ -5,6 +5,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddSingleton<ICommonCalculator, CommonCalculator>();
+builder.Services.AddSingleton<IAreaCalculator, AreaCalculator>();
 
 var app = builder.Build();
 

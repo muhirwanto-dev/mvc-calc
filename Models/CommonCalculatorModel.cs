@@ -1,6 +1,6 @@
 ﻿namespace Calculator.Models
 {
-    public class CalculatorModel
+    public class CommonCalculatorModel
     {
         public string Expression { get; set; }
     }

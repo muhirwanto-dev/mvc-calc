@@ -1,13 +1,15 @@
-﻿using Calculator.Services;
+﻿using System.Data;
+using Calculator.Models;
+using Calculator.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Calculator.Controllers
 {
-    public class CommonCalculatorController : Controller
+    public class AreaCalculatorController : Controller
     {
-        private readonly ICommonCalculator _calculator;
+        private readonly IAreaCalculator _calculator;
 
-        public CommonCalculatorController(ICommonCalculator calculator)
+        public AreaCalculatorController(IAreaCalculator calculator)
         {
             _calculator = calculator;
         }
@@ -25,16 +27,11 @@ namespace Calculator.Controllers
             return View("Index", _calculator.Model);
         }
 
-        public IActionResult AssignExpression(string value)
-        {
-            _calculator.AssignExpression(value);
-
-            return View("Index", _calculator.Model);
-        }
-
         [HttpGet]
-        public IActionResult DoCalculation()
+        public IActionResult DoCalculation(AreaCalculatorModel model)
         {
+            _calculator.Model.Height = model.Height;
+            _calculator.Model.Width = model.Width;
             _calculator.DoCalculation();
 
             return View("Index", _calculator.Model);

@@ -2,8 +2,10 @@
 
 namespace Calculator.Services
 {
-    public interface ICommonCalculator
+    public interface ICommonCalculator : ICalculator
     {
-        CalculatorModel CalculatorModel { get; }
+        CommonCalculatorModel Model { get; }
+
+        public void AssignExpression(string value);
     }
 }
