@@ -14,9 +14,18 @@
             </div>
             <div class='row'>
                 <form class='form-group-lg form-inline' onsubmit='return false'>
-                    <input asp-for=Height type='text' class='focusedInput form-control' style="margin-top: 10px">
-                    <input asp-for=Width type='text' class='focusedInput form-control' style="margin-top: 10px">
-                    <input asp-for=Wide type='text' class='focusedInput form-control' style="margin-top: 10px">
+                    <div class="row" style="margin-top: 10px">
+                        <label asp-for="Height" class="col-lg-2"></label>
+                        <input type="number" asp-for="Height" class="col-lg-2" />
+                    </div>
+                    <div class="row" style="margin-top: 10px">
+                        <label asp-for="Width" class="col-lg-2"></label>
+                        <input type="number" asp-for="Width" class="col-lg-2" />
+                    </div>
+                    <div class="row" style="margin-top: 10px">
+                        <label asp-for="Wide" class="col-lg-2"></label>
+                        <input type="number" asp-for="Wide" class="col-lg-2" />
+                    </div>
                     <button onclick="location.href='@Url.Action("ClearExpression", "AreaCalculator")'"
                             class='btn btn-warning btn-lg' type='button' style="margin-top: 10px">
                         Clear
