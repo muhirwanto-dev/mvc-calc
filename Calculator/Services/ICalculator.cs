@@ -2,7 +2,7 @@
 
 namespace Calculator.Services
 {
-    public interface ICalculator
+    public interface ICalculator : IDisposable
     {
         /// <summary>
         /// Clear all calculator input.

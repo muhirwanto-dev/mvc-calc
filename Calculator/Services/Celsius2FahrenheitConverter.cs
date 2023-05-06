@@ -17,6 +17,15 @@ namespace Calculator.Services
         {
         }
 
+        #region IDisposable
+
+        public void Dispose()
+        {
+            // Dummy disposable for unit test
+        }
+
+        #endregion // IDisposablse
+
         public void ClearExpression()
         {
             Model.Input = string.Empty;

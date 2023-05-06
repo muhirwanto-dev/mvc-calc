@@ -11,6 +11,15 @@ namespace Calculator.Services
         {
         }
 
+        #region IDisposable
+
+        public void Dispose()
+        {
+            // Dummy disposable for unit test
+        }
+
+        #endregion // IDisposablse
+
         public void ClearExpression()
         {
             Model.Expression = string.Empty;
@@ -18,7 +27,7 @@ namespace Calculator.Services
 
         public void AssignExpression(string value)
         {
-            if (value != "." || !Model.Expression.Contains(value))
+            if (value != "." || Model.Expression == null || !Model.Expression.Contains(value))
             {
                 Model.Expression += value;
             }
