@@ -10,7 +10,10 @@
         <h1 class='text-center text-primary'>Volume Calculator</h1>
         <div class='container'>
             <div class="container">
-                <h1 class='text-black'>Result: @Model.Result</h1>
+                <div class="row">
+                    <label asp-for="Result" class="text-black h1 col-lg-3"></label>
+                    <h1 class='text-black col-lg-3'>: @Model.Result</h1>
+                </div>
             </div>
             <div class='row'>
                 <form class='form-group-lg form-inline' onsubmit='return false'>
